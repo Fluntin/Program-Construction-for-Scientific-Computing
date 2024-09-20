@@ -22,10 +22,9 @@ UTEST(simpson, check_negative_tau) {
     auto identityFunction = [](double x) {
         return x;
     };
-    
+
     ASSERT_EXCEPTION(simpsonAdaptive(identityFunction, &evalCounter, 0, 1, 0), std::underflow_error);
     ASSERT_EXCEPTION(simpsonAdaptive(identityFunction, &evalCounter, 0, 1, -1e-9), std::underflow_error);
 }
 
 UTEST_MAIN();
-
